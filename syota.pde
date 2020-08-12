@@ -59,7 +59,7 @@ class Option {
       if (i == 0) {
         text("easy", x-150, y+y2, 300, 70);
       } else if (i == 1) {
-        text("nomal", x-150, y+y2, 300, 70);
+        text("omal", x-150, y+y2, 300, 70);
       } else {
         text("hard", x-150, y+y2, 300, 70);
       }
