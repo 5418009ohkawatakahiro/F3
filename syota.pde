@@ -59,7 +59,7 @@ class Option {
       if (i == 0) {
         text("easy", x-150, y+y2, 300, 70);
       } else if (i == 1) {
-        text("omal", x-150, y+y2, 300, 70);
+        text("nomal", x-150, y+y2, 300, 70);
       } else {
         text("hard", x-150, y+y2, 300, 70);
       }
@@ -207,7 +207,7 @@ class Stage {
       }
       ox[i]-=step;
     }
-    if (15*1000<tm) {
+    if (15*1000<temp) {
       fill(255, 255, 0);
       rect(linex, 0, width-linex, height);
       fill(115, 66, 41);
@@ -279,7 +279,7 @@ class Player {
       fill(0);
       stroke(0);
       line(x-10, y, x-20, y-10);
-      line(x+10, y, x+20, y-10); // Draw Zoog's head
+      line(x+10, y, x+20, y-10); 
     }
   }
   void gravity() {
@@ -290,7 +290,6 @@ class Player {
     }
     if (reverse) {
       y += vy;
-      //vy+=dy;
     }
   }
   void crash() {
