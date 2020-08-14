@@ -316,7 +316,7 @@ class Player {
           isCrash = true;
         }
       } else if (y <= height/2  && a == -1) {
-        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] &&  y-60 <= s.earth && s.holey[i]==s.earth) {
+        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] &&  y-60 <= s.earth && s.holey[i]==0) {
           isCrash = true;
         }
       }
