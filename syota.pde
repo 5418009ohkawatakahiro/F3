@@ -297,27 +297,33 @@ class Player {
       if (y > height/2 && a==1) {
         if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+60 > s.oy[i] && y-60 < s.oy[i]+s.oh[i]) {
           isCrash = true;
+          println("a");
         }
       } else if (y > height/2 && a==-1) {
         if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+60 > s.oy[i] && y-60 < s.oy[i]+s.oh[i]) {
           isCrash = true;
+          println("b");
         }
       } else if (y <= height/2 && a==1) {
         if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+60 > s.oy[i] && y-60 < s.oy[i]+s.oh[i]) {
           isCrash = true;
+          println("c");
         }
       } else if (y <= height/2 &&a==-1) {        
         if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+60 > s.oy[i] && y-60 < s.oy[i]+s.oh[i]) {
           isCrash = true;
+          println("d");
         }
       }
       if (y > height/2 && a == 1) {
-        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] && y+60 >= height-s.earth && y-60 < height) {
+        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] && y+60 >= height-s.earth && s.holey[i]==height-s.earth) {
           isCrash = true;
+          println("e");
         }
       } else if (y <= height/2  && a == -1) {
-        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] &&  y-60 <= s.earth && y+60 > 0) {
+        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] &&  y-60 <= s.earth && s.holey[i]==s.earth) {
           isCrash = true;
+          println("f");
         }
       }
     }
