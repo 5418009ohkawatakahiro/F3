@@ -389,7 +389,7 @@ void setup() {
   s=new Stage();
   o = new Option();
   p[0]=new Player(100, height-110);
-  p[1]=new Player(100, 60);
+  p[1]=new Player(100, 110);
   p[1].a *= -1;
   p[1].vy *= -1;
   m=new Manager();
