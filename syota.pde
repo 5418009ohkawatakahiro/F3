@@ -264,26 +264,26 @@ class Player {
       
       ellipse(x, y-30, 60, 60);
       fill(255, 255, 0);
-      rect(x-19, y-30, 16, 16);
-      rect(x+19, y-30, 16, 16);   
+      ellipse(x-19, y-30, 16, 16);
+      ellipse(x+19, y-30, 16, 16);   
       fill(0);
       stroke(0);
       line(x-10, y+50, x-20, y+60);
       line(x+10, y+50, x+20, y+60); 
     } else {
-      rect(x-15, y, 30, 50);
-      ellipse(x, y+80, 60, 60);
+      rect(x-15, y-50, 30, 50);
+      ellipse(x, y+30, 60, 60);
       fill(255, 255, 0);
-      rect(x-19, y+80, 16, 16);
-      rect(x+19, y+80, 16, 16);   
+      ellipse(x-19, y+30, 16, 16);
+      ellipse(x+19, y+30, 16, 16);   
       fill(0);
       stroke(0);
-      line(x-10, y, x-20, y-10);
-      line(x+10, y, x+20, y-10); 
+      line(x-20, y-60, x-10, y-50);
+      line(x+20, y-60, x+10, y-50); 
     }
   }
   void gravity() {
-    if (y-10 < 50 && vy<=-5) {
+    if (y-60 < 50 && vy<=-5) {
       reverse=false;
     } else if (height-50<y+60 && 5<=vy) {
       reverse=false;
@@ -299,7 +299,7 @@ class Player {
           isCrash = true;
         }
       } else if (y > height/2 && a==-1) {
-        if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+110 > s.oy[i] && y-10 < s.oy[i]+s.oh[i]) {
+        if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+60 > s.oy[i] && y-60 < s.oy[i]+s.oh[i]) {
           isCrash = true;
         }
       } else if (y <= height/2 && a==1) {
@@ -307,16 +307,16 @@ class Player {
           isCrash = true;
         }
       } else if (y <= height/2 &&a==-1) {        
-        if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+110 > s.oy[i] && y-10 < s.oy[i]+s.oh[i]) {
+        if (x+30 > s.ox[i] && x-30 < s.ox[i]+s.ow[i] && y+60 > s.oy[i] && y-60 < s.oy[i]+s.oh[i]) {
           isCrash = true;
         }
       }
       if (y > height/2 && a == 1) {
-        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] && y+60 == s.holey[i] && y-60 < height) {
+        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] && y+60 >= height-s.earth && y-60 < height) {
           isCrash = true;
         }
       } else if (y <= height/2  && a == -1) {
-        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] &&  y-55 == s.holey[i] && y+60 > 0) {
+        if (x+30 > s.holex[i] && x-30 < s.holex[i]+s.holew[i] &&  y-60 <= s.earth && y+60 > 0) {
           isCrash = true;
         }
       }
