@@ -257,11 +257,11 @@ class Player {
     y=y1;
   }
   void drawAun() {
-    
+
     stroke(0);
     if (a==1) {
       rect(x-15, y, 30, 50);
-      
+
       ellipse(x, y-30, 60, 60);
       fill(255, 255, 0);
       ellipse(x-19, y-30, 16, 16);
@@ -269,7 +269,7 @@ class Player {
       fill(0);
       stroke(0);
       line(x-10, y+50, x-20, y+60);
-      line(x+10, y+50, x+20, y+60); 
+      line(x+10, y+50, x+20, y+60);
     } else {
       rect(x-15, y-50, 30, 50);
       ellipse(x, y+30, 60, 60);
@@ -279,7 +279,7 @@ class Player {
       fill(0);
       stroke(0);
       line(x-20, y-60, x-10, y-50);
-      line(x+20, y-60, x+10, y-50); 
+      line(x+20, y-60, x+10, y-50);
     }
   }
   void gravity() {
@@ -339,9 +339,11 @@ class Manager {
   int sum;
   boolean goal=false;
   void manage() {
-    for (int i=0; i<player; i++) {
-      if (p[i].isCrash==true) {
-        sum++;
+    if (15*1000>=s.temp) {
+      for (int i=0; i<player; i++) {
+        if (p[i].isCrash==true) {
+          sum++;
+        }
       }
     }
     if (sum==0) {
@@ -353,20 +355,20 @@ class Manager {
         goal=s.is_goal();
         if (goal) {
           for (int i=0; i<player; i++) {
-            if(i == 0){
-            fill(255,102,0);
-          }else{
-            fill(204,255,51);
-          }
+            if (i == 0) {
+              fill(255, 102, 0);
+            } else {
+              fill(204, 255, 51);
+            }
             p[i].draw_goal();
           }
           return;
         }
         for (int i=0; i<player; i++) { 
-          if(i == 0){
-            fill(255,102,0);
-          }else{
-            fill(204,255,51);
+          if (i == 0) {
+            fill(255, 102, 0);
+          } else {
+            fill(204, 255, 51);
           }
           p[i].drawAun();
           p[i].gravity();
